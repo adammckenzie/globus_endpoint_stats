@@ -1,0 +1,22 @@
+[auth]
+client_id=
+refresh_token=
+active_token=
+token_expires=
+
+[database]
+dbhost=
+dbname=
+dbuser=
+dbpassword=
+timeout=
+
+[endpoints]
+endpoints=
+
+[output]
+file_path =
+
+[task]
+start_date =
+end_date =
