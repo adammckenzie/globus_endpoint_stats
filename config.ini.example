@@ -1,22 +1,27 @@
 [auth]
-client_id=
+# The client id of the user you want to use to access tasks i.e. computecanada@globusid.org.
+client_id=d2a98c78-a6ed-42ca-92ca-adb558e2c874
+# Run the script get-refresh-token.py to get the following three values.
+# WARNING: A refresh token should be as secret, or moreso than a password.
+# More info at: https://globus-sdk-python.readthedocs.io/en/stable/tutorial/#step-4-use-your-tokens-talk-to-the-service
 refresh_token=
 active_token=
 token_expires=
 
 [database]
-dbhost=
-dbname=
-dbuser=
+dbhost=localhost
+dbname=globus_usage
+dbuser=globus_usage_user
 dbpassword=
-timeout=
+timeout=1000
 
 [endpoints]
-endpoints=
-
-[output]
-file_path =
+endpoints=CRIUGM,5bd7f373-b5af-11e6-9b44-22000a1e3b52;Compute Canada HPSS (computecanada#fff86533-2ce2-11e6-806e-22000b1701d1),fff86533-2ce2-11e6-806e-22000b1701d1;computecanada#breezy,d50a0815-6d04-11e5-ba46-22000b92c6ec;computecanada#briaree,b23ee446-6d04-11e5-ba46-22000b92c6ec;computecanada#bugaboo,de463ffd-6d04-11e5-ba46-22000b92c6ec;computecanada#calgary-dtn,7e24c32e-feb1-11e6-bace-22000b9a448b;computecanada#colosse,c1cf11d4-6d04-11e5-ba46-22000b92c6ec;computecanada#glooscap,db57dee3-6d04-11e5-ba46-22000b92c6ec;computecanada#gpc,ba62a2bd-6d04-11e5-ba46-22000b92c6ec;computecanada#grex,e09e684d-6d04-11e5-ba46-22000b92c6ec;computecanada#guillimin,e38eea3e-6d04-11e5-ba46-22000b92c6ec;computecanada#hermes,b4c53282-6d04-11e5-ba46-22000b92c6ec;computecanada#hungabee,a9a9aeda-6d04-11e5-ba46-22000b92c6ec;computecanada#jasper,dedbd4ab-6d04-11e5-ba46-22000b92c6ec;computecanada#kraken,d20e614d-6d04-11e5-ba46-22000b92c6ec;computecanada#lattice,d50a08c0-6d04-11e5-ba46-22000b92c6ec;computecanada#mammouth,dabdce63-6d04-11e5-ba46-22000b92c6ec;computecanada#nestor,b4c53250-6d04-11e5-ba46-22000b92c6ec;computecanada#orca,c09d897d-6d04-11e5-ba46-22000b92c6ec;computecanada#orcinus,a9a9aef6-6d04-11e5-ba46-22000b92c6ec;computecanada#parallel,dd1ee97e-6d04-11e5-ba46-22000b92c6ec;computecanada#remora1,31ca95ac-c726-11e6-9c2c-22000a1e3b52;computecanada#remora2,c2500a28-b8ab-11e6-9b55-22000a1e3b52;computecanada#remora3,e3f6b46a-b671-11e6-9b48-22000a1e3b52;computecanada#remora4,96abe0ca-c726-11e6-9c2c-22000a1e3b52;computecanada#remora5,9b2e660a-a2a4-11e6-b0fc-22000b92c261;computecanada#requin,d98c810a-6d04-11e5-ba46-22000b92c6ec;computecanada#saw,d20e614b-6d04-11e5-ba46-22000b92c6ec;computecanada#sfu-dtn,b792f0f2-cc90-11e6-9c7d-22000a1e3b52;computecanada#sfu-publish,d599036d-6d04-11e5-ba46-22000b92c6ec;computecanada#sfu-rcg,26af97c4-ff09-11e6-bacf-22000b9a448b;computecanada#sharcnet-dtn1,d0ccdce4-6d04-11e5-ba46-22000b92c6ec;computecanada#tcs,a9a9af17-6d04-11e5-ba46-22000b92c6ec;computecanada#ulaval-dtn2,a9a9af1e-6d04-11e5-ba46-22000b92c6ec;computecanada#usask-publish,d98c7e7c-6d04-11e5-ba46-22000b92c6ec;computecanada#utoronto-publish,d62d1d66-6d04-11e5-ba46-22000b92c6ec;computecanada-sfu-dtn,4b3305e2-0044-11e7-bad7-22000b9a448b
 
 [task]
-start_date =
-end_date =
+# The date to start looking for tasks
+start_date = 2016-05-15T0:0:0
+# The last date and time to look for tasks
+end_date = 2017-05-15T0:0:0
+# The number of days to scan for tasks (to ensure we stay under the 1000 task limit)
+interval = 15

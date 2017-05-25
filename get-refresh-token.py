@@ -22,6 +22,6 @@ transfer_rt = globus_transfer_data['refresh_token']
 transfer_at = globus_transfer_data['access_token']
 expires_at_s = globus_transfer_data['expires_at_seconds']
 
-print("Refresh Token: '" + str(transfer_rt) + "'")
-print("Active Token: '" + str(transfer_at) + "'")
-print("Expires '" + str(expires_at_s) + "'")
+print("refresh_token: '" + str(transfer_rt) + "'")
+print("active_token: '" + str(transfer_at) + "'")
+print("token_expires '" + str(expires_at_s) + "'")
