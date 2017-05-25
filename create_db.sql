@@ -17,5 +17,5 @@ CREATE TABLE task (
     destination_endpoint_display_name varchar(255) DEFAULT NULL,
     files_transferred bigint DEFAULT NULL,
     bytes_transferred bigint DEFAULT NULL,
-    effective_bytes_per_second varchar(255) DEFAULT NULL
+    effective_bytes_per_second bigint DEFAULT NULL
 );
