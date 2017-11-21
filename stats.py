@@ -3,8 +3,16 @@ import ConfigParser
 import globus_sdk
 import psycopg2
 
-# The Globus SDK needs to be installed first: https://globus-sdk-python.readthedocs.io/en/stable/installation/
+# 1. The Globus SDK needs to be installed first: https://globus-sdk-python.readthedocs.io/en/stable/installation/
 # short answer: pip install globus-sdk
+
+# 2. You will need a Postgres database to store the results. e.g. Ubuntu (sudo apt-get install postgresql postgresql-contrib), Redhat (yum install postgresql96-server), brew install postgres  etc.
+
+# 3. Configure Postgres to accept connections from your script using the md5 method.
+# e.g.  host    globus_usage      globus_usage_user     127.0.0.1/32 md5
+
+# 4. Install python lib for Postgres connection
+# pip install psycopg2
 
 def get_next_interval(current, end_date, interval):
     if current + timedelta(days=interval) >= end_date:
@@ -72,7 +80,7 @@ def output_tasks_from_endpoint(name, endpoint, completion_time_filter, tc, conne
         cursor.execute("SELECT task_id FROM task WHERE task_id=%s", (task["task_id"], ))
         connection.commit()
         if cursor.rowcount > 0:
-            print("We found the task already in the database '" + task["task_id"] + "'")
+            print("We found the task already in the database '" + task["task_id"] + "' " + task["request_time"])
         else:
             cursor.execute("INSERT INTO task (task_id, task_type, status, owner_id, owner_string, request_time, completion_time, source_endpoint_id, source_endpoint_display_name, destination_endpoint_id, destination_endpoint_display_name, files_transferred, bytes_transferred, effective_bytes_per_second) SELECT %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s", (
             task["task_id"],
